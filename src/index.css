@@ -1,0 +1,33 @@
+body {
+  background-color: #1a1d20;
+  color: #e9ecef;
+}
+
+.card {
+  background-color: #2d3238 !important;
+  border-color: #454d55 !important;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-title {
+  color: #e9ecef !important;
+}
+
+.text-muted {
+  color: #adb5bd !important;
+}
+
+.pokemon-stats {
+  color: #adb5bd;
+  font-size: 0.875rem;
+}
+
+.app-title {
+  color: #e9ecef;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
