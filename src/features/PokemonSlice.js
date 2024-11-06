@@ -14,7 +14,10 @@ export const fetchPokemons = createAsyncThunk(
           image: detailResponse.data.sprites.front_default,
           types: detailResponse.data.types.map(type => type.type.name),
           height: detailResponse.data.height,
-          weight: detailResponse.data.weight
+          weight: detailResponse.data.weight,
+          stats: detailResponse.data.stats,
+          abilities: detailResponse.data.abilities,
+          sprites: detailResponse.data.sprites
         };
       })
     );
@@ -27,9 +30,14 @@ const pokemonSlice = createSlice({
   initialState: {
     pokemons: [],
     status: 'idle',
-    error: null
+    error: null,
+    selectedPokemon: null
   },
-  reducers: {},
+  reducers: {
+    setSelectedPokemon: (state, action) => {
+      state.selectedPokemon = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPokemons.pending, (state) => {
@@ -46,4 +54,5 @@ const pokemonSlice = createSlice({
   }
 });
 
+export const { setSelectedPokemon } = pokemonSlice.actions;
 export default pokemonSlice.reducer;

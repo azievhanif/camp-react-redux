@@ -31,3 +31,26 @@ body {
   color: #e9ecef;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.pokemon-card {
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3) !important;
+}
+
+.modal-content {
+  background-color: #2d3238 !important;
+  border-color: #454d55 !important;
+}
+
+.progress {
+  background-color: #454d55;
+}
+
+.progress-bar {
+  transition: width 0.5s ease-in-out;
+}

@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import { store } from './app/store';
 import PokemonGrid from './components/PokemonGrid';
+import PokemonDetail from './components/PokemonDetail';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Container fluid className="py-4">
         <h1 className="text-center mb-4 app-title">Pokemon Cards</h1>
         <PokemonGrid />
+        <PokemonDetail />
       </Container>
     </Provider>
   );

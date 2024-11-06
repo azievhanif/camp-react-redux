@@ -1,11 +1,15 @@
 import React from 'react';
 import { Card, Badge } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { setSelectedPokemon } from '../features/PokemonSlice';
 
 const PokemonCard = ({ pokemon }) => {
+  const dispatch = useDispatch();
+
   const getTypeColor = (type) => {
     const colors = {
       fire: 'danger',
-      water: 'info',
+      water: 'primary',
       grass: 'success',
       electric: 'warning',
       ice: 'primary',
@@ -25,9 +29,12 @@ const PokemonCard = ({ pokemon }) => {
     };
     return colors[type] || 'primary';
   };
+  const handleClick = () => {
+    dispatch(setSelectedPokemon(pokemon));
+  };
 
   return (
-    <Card className="h-100">
+    <Card className="h-100" onClick={handleClick} style={{ cursor: 'pointer' }}>
       <div className="text-center p-3">
         <Card.Img 
           variant="top" 
